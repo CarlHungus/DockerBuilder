@@ -1,10 +1,10 @@
-FROM ubuntu
-RUN apt-get update \
- && apt-get install -y curl \
+FROM alpine
+RUN apk update \
+ && apk add --no-cache curl \
                        openssl \
                        ca-certificates \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/cache/apk/*
 RUN curl --help
 CMD ["/bin/sh"]
 
-# sudo docker build -t curl --force-rm .
+# sudo docker build -t curl-alpine --force-rm .

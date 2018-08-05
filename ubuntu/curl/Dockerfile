@@ -1,4 +1,4 @@
-FROM debian
+FROM ubuntu
 RUN apt-get update \
  && apt-get install -y --no-install-recommends curl \
                                                openssl \
@@ -7,4 +7,4 @@ RUN apt-get update \
 RUN curl --help
 CMD ["/bin/sh"]
 
-# sudo docker build -t curl-deb --force-rm .
+# sudo docker build -t curl-ubuntu --force-rm .
